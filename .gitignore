@@ -18,3 +18,7 @@ aerofoil_data/
 # OS
 .DS_Store
 Thumbs.db
+build/
+dist/
+*.spec
+*.zip

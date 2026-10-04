@@ -2,10 +2,16 @@ import hashlib
 import json
 import math
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent / "aerofoil_data"
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys.executable).parent
+else:
+    BASE_DIR = Path(__file__).resolve().parent
+
+DATA_DIR = BASE_DIR / "aerofoil_data"
 SETTINGS_PATH = DATA_DIR / "settings.json"
 LIBRARY_PATH = DATA_DIR / "library.json"
 
